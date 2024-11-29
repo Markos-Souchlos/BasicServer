@@ -1,10 +1,11 @@
 import express from "express";
-import ejs from "ejs";
 import pg from "pg";
 import env from "dotenv";
 
 const app = express();
 const port = 3000;
+
+env.config();
 const db = new pg.Client({
 	port: process.env.PG_PORT,
 	user: process.env.PG_USER,
@@ -30,10 +31,4 @@ app.listen(port, (req,res) => {
 
 
 
-To push on github run on terminal:
 
-touch .gitignore -> nano .gitignore -> node_modules + package-lock.json
-git init
-gh repo create 
-git remote add origin "https://github.com/Markos-Souchlos/YourProjectName.git"
-git branch -M main 
